@@ -6,3 +6,4 @@ file(GLOB srcs "${CMAKE_CURRENT_SOURCE_DIR}/*.c")
 
 
 add_subdirectory("Lab 1/part1")
+add_subdirectory("Lab 1/part2")

@@ -3,4 +3,8 @@ add_executable(lab1p3a
 add_executable(lab1p3c
         "lab1p3c.c")
 add_executable("lab1p3-testpb"
-        "lab1p3c.c")
+        "phonebook.c"
+        "phonebook.h"
+        "testpb.c"
+        "bintree.c"
+        "bintree.h")

@@ -123,6 +123,7 @@ TTreeNode *makeNewNode(char *name, char *phoneNum) {
     strcpy(node->name, name);
     strcpy(node->phoneNum, phoneNum);
     node->left = node->right = NULL;
+    return node;
 }
 
 // Add a new node to the tree. 

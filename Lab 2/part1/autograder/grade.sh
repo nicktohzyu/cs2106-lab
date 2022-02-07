@@ -25,7 +25,7 @@ function autograde {
 		gcc utils.h utils.c sum.c 2> results.out
 		if [[ $? -eq 1 ]]; then
 			echo -e "Directory $i has a compile error.\nDirectory $i score $grade / $numFiles"
-			break
+			continue
 		fi
 		# Generate output from C code using *.in files in ref
 		for j in ../../ref/*.in; do

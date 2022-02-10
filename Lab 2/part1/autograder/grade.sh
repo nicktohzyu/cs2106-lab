@@ -22,21 +22,24 @@ function autograde {
 		grade=0
 		cd $i
 		# Compile C code, print compile error message to output file
-		gcc utils.h utils.c sum.c 2> results.out
+		# gcc utils.h utils.c sum.c -o student 2> results.out
+		gcc utils.h utils.c sum.c -o $i 2> results.out
 		if [[ $? -eq 1 ]]; then
 			echo -e "Directory $i has a compile error.\nDirectory $i score $grade / $numFiles"
 			continue
 		fi
 		# Generate output from C code using *.in files in ref
 		for j in ../../ref/*.in; do
-			./a.out < $j > $j-student.out
+			# ./student < $j > $j-student.out
+			./$i < $j > $j-student.out
 			# Compare with reference output files  and award 1 mark if they are identical
 			if cmp -s "$j-student.out" "$j.out"; then
 				grade=$(($grade+1))
 			fi
 			rm $j-student.out
 		done
-		rm a.out utils.h.gch
+		# rm student
+		rm $i
 		# print score for student
 		echo "Directory $i score $grade / $numFiles"
 		cd ..

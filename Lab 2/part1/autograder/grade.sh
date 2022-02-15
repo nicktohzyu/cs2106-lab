@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 function autograde {
 	echo -e "Test date and time: $(date +%A), $(date +"%d %B %Y"), $(date +%T)\n"
@@ -52,7 +52,7 @@ function autograde {
 if [[ $# -ne 1 ]]; then
 	echo "Usage: ./grade.sh <filename>"
 else 
-	autograde $1
+	autograde $1 > results.out
 fi
 
     

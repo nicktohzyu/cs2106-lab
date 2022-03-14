@@ -1,0 +1,11 @@
+add_executable(lab3p3
+        "config.h"
+        "bigsmall.c")
+add_executable(lab3p3-par
+        "barrier.c"
+        "barrier.h"
+        "config.h"
+        "bigsmall-par.c")
+TARGET_LINK_LIBRARIES(lab3p3-par
+        pthread
+        )

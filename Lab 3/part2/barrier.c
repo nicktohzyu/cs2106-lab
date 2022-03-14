@@ -44,6 +44,7 @@ void destroy_barrier(int my_pid) {
     	sem_destroy(barrier);
     	sem_destroy(mutex);
     	shmctl(count_shmid, IPC_RMID, 0);
+    	shmctl(numproc_shmid, IPC_RMID, 0);
     	shmctl(barrier_shmid, IPC_RMID, 0);
     	shmctl(mutex_shmid, IPC_RMID, 0);
     }

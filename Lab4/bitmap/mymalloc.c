@@ -4,8 +4,7 @@
 #include "mymalloc.h"
 
 struct PointerInfo {
-	void *ptr;
-	size_t size;
+    size_t size;
 };
 
 char _heap[MEMSIZE] = {0};
@@ -34,7 +33,7 @@ void *mymalloc(size_t size) {
     	return NULL;
 	} 
 	allocate_map(&map[0], index, size);
-	struct PointerInfo pointer_info = { &_heap[index], size };
+	struct PointerInfo pointer_info = { size };
 	pointers[index] = pointer_info;
 	return &_heap[index];
 }
